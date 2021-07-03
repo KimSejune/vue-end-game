@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // 현재 프로젝트를 기준으로 설정.
     "paths": {
       "~/*": [
         "./*"
       ],
-      "@/*": [
+      "@/*": [ // src 밑에 파일들을 바로 확인 할 수 있다.
         "./src/*"
       ],
     }
   },
-  "exclude": [ 
+  "exclude": [ // 컴파일러에 제외될 옵션 라이브러리 등등
     "node_modules",
     "dist"
   ]
