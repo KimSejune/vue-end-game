@@ -1,5 +1,6 @@
 module.exports = {
   devServer: {
-    overlay: false
-  }
+    // webpack의 devserver overlay 제거
+    overlay: false,
+  },
 };
