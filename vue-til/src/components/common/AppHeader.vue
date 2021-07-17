@@ -1,10 +1,11 @@
 <template>
-	<div>header</div>
+	<header>
+		<router-link to="/login">Login</router-link> |
+		<router-link to="/signup">SignUp</router-link>
+	</header>
 </template>
 
 <script>
-import Demo from '@/demo/basic/Demo';
-
 export default {};
 </script>
 
