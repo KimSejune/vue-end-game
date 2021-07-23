@@ -9,4 +9,8 @@ async function registerUser(userData) {
 	return await instance.post('signup', userData);
 }
 
-export { registerUser };
+async function loginUser(userData) {
+	return await instance.post('login', userData);
+}
+
+export { registerUser, loginUser };
