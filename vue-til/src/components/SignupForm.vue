@@ -14,13 +14,14 @@
 			<input id="nickname" type="text" v-model="nickname" />
 		</div>
 		<!-- button 클릭시 이벤트 버블링으로 form 태그에 올라간다. -->
-		<button type="submit">회원가입</button>
+		<button :disabled="!isFormValid" type="submit">회원가입</button>
 		<p>{{ logMessage }}</p>
 	</form>
 </template>
 
 <script>
 import { registerUser } from '@/api/index';
+import { validateEmail } from '@/utils/validation';
 
 export default {
 	data() {
@@ -30,6 +31,14 @@ export default {
 			nickname: '',
 			logMessage: '',
 		};
+	},
+	computed: {
+		isUsernameValid() {
+			return validateEmail(this.username);
+		},
+		isFormValid() {
+			return this.isUsernameValid && this.password;
+		},
 	},
 	methods: {
 		async submitForm() {
