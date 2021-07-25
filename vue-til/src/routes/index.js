@@ -22,6 +22,10 @@ export default new VueRouter({
 			component: () => import('@/views/SignupPage.vue'), // 코드 스플릿팅
 		},
 		{
+			path: '/main',
+			component: () => import('@/views/MainPage.vue'),
+		},
+		{
 			path: '*', // 위를 제외한 모든 url 반응
 			component: () => import('@/views/NotFoundPage.vue'),
 		},
