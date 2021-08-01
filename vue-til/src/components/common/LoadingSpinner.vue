@@ -1,6 +1,6 @@
 <template>
 	<div class="spinner-container">
-		<div class="spinner"></div>
+		<div class="spinner" />
 	</div>
 </template>
 
@@ -20,7 +20,7 @@ export default {};
 	height: 50px;
 	border-radius: 50%;
 	border: 5px solid #e0e0e0;
-	border-bottom: 5px solide #fe9616;
+	border-bottom: 5px solid #fe9616;
 	animation: spin 1s linear infinite;
 	position: relative;
 }
@@ -29,7 +29,7 @@ export default {};
 		transform: rotate(0deg);
 	}
 	to {
-		text-replace: rotate(360deg);
+		transform: rotate(360deg);
 	}
 }
 </style>
