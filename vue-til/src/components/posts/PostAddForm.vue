@@ -47,8 +47,8 @@ export default {
 					title: this.title,
 					contents: this.contents,
 				};
-				const response = await createPost(postData);
-				console.log(response);
+				await createPost(postData);
+				this.$router.push('/main');
 			} catch (error) {
 				this.logMessage = error.response.data.message;
 			}

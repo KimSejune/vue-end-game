@@ -7,6 +7,7 @@
 				<PostListItem
 					v-for="postItem in postItems"
 					:key="postItem._id"
+					@refresh="fetchData"
 					:postItem="postItem"
 				></PostListItem>
 			</ul>
