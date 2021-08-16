@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<div>
-			<router-link to="/" class="logo"> TIL </router-link>
+			<router-link :to="logoLink" class="logo"> TIL </router-link>
 			<span v-if="isUserLogin">by {{ $store.state.username }}</span>
 		</div>
 		<div class="navigations">
@@ -19,15 +19,23 @@
 </template>
 
 <script>
+import { deleteCookie } from '@/utils/cookies';
+
 export default {
 	computed: {
 		isUserLogin() {
 			return this.$store.getters.isLogin;
 		},
+		logoLink() {
+			return this.isUserLogin ? '/main' : '/login';
+		},
 	},
 	methods: {
 		logoutUser() {
 			this.$store.commit('clearUsername');
+			this.$store.commit('clearToken');
+			deleteCookie('til_user');
+			deleteCookie('til_auth');
 			this.$router.push('/login');
 		},
 	},
